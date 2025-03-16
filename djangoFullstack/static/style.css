@@ -1,0 +1,39 @@
+body{
+    background-color: goldenrod;
+}
+h1{
+    font-size: 3em;
+    background-color: brown;
+    color: antiquewhite;
+    text-align: center;
+    margin: 5px;
+    padding: 14px
+}
+p{
+    font-size: 1.5em;
+    margin: 14px;
+    padding: 5px;
+    background-color: bisque;
+    text-align:left;
+}
+nav{
+    margin:5px;
+    padding:15px;
+    font-size: 3em;
+    border-radius: 30%;
+}
+a{
+    color:hotpink;
+}
+h2{
+    font-size: 3em;
+    background-color: brown;
+    color: antiquewhite;
+    text-align: center;
+    margin: 5px;
+    padding: 14px
+}
+a:hover {
+    background-color: yellow;
+    font-size: 18px;
+}

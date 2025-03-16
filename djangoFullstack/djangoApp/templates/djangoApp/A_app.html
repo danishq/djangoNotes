@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block title %}A_app{% endblock %}
+{% block content %}
+
+    <h1 class="text-5xl">Creating a New App</h1>
+        <p class="bg-fuchsia-600 text-2xl">
+            <br>1. We create a new app by running command python manage.py startapp djangoApp
+            <br>2. We configre settings.py and mention app name in INSTALLED_APPS array
+            <br>3. we make aware main urls.py that we have a new app and transfer the url handling to that new app path('djangoApp/', include('djangoApp.urls'))
+            <br>4. we create routing in urls.py of djangoApp
+            <br>5. we make views.py in djangoApp and import necessary library and create function to render our A_app.html file.
+            <br>6. We ensure the html file is located at correct place and note to remember that django automatically looks for file in template folder because we mentioned dirs['templates'] in settigs.py earlier.
+        
+        </p>
+
+{% endblock %}

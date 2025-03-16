@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block title %} Tailwind Setup{% endblock %}
+
+{% block content %}
+
+<h2 class="text-5xl">How to setup Tailwind</h2>
+<p>
+    <br>1. Mention in INSTALLED_APPS [] that we have tailwind and tailwind reload.
+    <br>2. Mention in MIDDLEWARE that we have tailwind reload.
+    <br>3. Go to manage.py directory and run command : python manage.py tailwind init.
+    <br>4. while initializing command, it will ask to name the tailwind app and default is "theme".
+    <br>5. Mention theme in INSTALLED_APPS in settings.py
+    <br>6. TAILWIND_APP_NAME= 'theme' and mention INTERNAL_IPS =['127.0.0.1'] THIS IS BECAUSE WE WILL NEED TO RUN TWO SERVER AT THE SAME TIME ONE IS MANAGE.PY AND OTHER IS TAILWIND SERVER.
+    <br>7. and finally run command "python manage.py tailwind install This will take some time."
+    <br>8. now we will get a folder of name theme and in it there is a file "base.html". tailwind itself makes a base file. that we have already created of name layout.html which is also called base.html.
+    <br>9. In base.html there are two injected codes {% load static tailwind_tags%} and another {% tailwind_css%}. Paste these two lines in our layout.html.
+    <br>10. To start tailwind. run command in a seperate terminal [make sure it is using virtual env where tailwind is installed], and run command python manage.py tailwind start. ALSO MAKE SURE NPM_BIN_PATH is mentioned in settings.py of main project. (if you want to know path of npm run command 'where npm')
+    <br class="bg-red-600">11. (A). To enable hot reloading. go to settings.py -> mention 'django_browser_reload' in INSTALLED_APPS.
+    (B)configure MIDDLEWARE also -> "django_browser_reload.middleware.BrowserReloadMiddleware",
+    <br>12. configure urls.py of main project and write " path('__reload__/', include("django_browser_reload.urls")), ". And now hot reloading should work without any issue.
+
+</p>
+
+{% endblock %}

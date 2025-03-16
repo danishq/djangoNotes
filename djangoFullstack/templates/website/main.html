@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block title %}Django Docs{% endblock %}
+{% block content %}    
+    <h1>Main page</h1>
+    <p>
+        here we are loading static at the top line this is called code injection
+        also we need to make some changes in settings.py for this to work <br> 
+       <br> 1. first create virtual enviroment
+       <br> 2. activate virtual enviroment
+       <br> 3. install Django -> conda install Django
+       <br> 4. create views.py -> return(render, 'website/main.html')
+       <br> 5. import http response and render because here we create function to call correct html files
+       <br> 6. in urls.py import . views and then give correct path to url because this is used for routing, path('', views.main, name='main')
+       <br> 7. Whenever creating an app by running command "python manage.py startapp djangoApp", always remember to configure it in settings.py under installed apps 'djangoApp',
+       <br> 8. also remember to mention it in urls.py of main project. Because each app has its own url.py for routing. this should be mention in urls.py of main project for making aware the main project that each app will its own routing.
+       <br>
+    </p>
+    <a href="{% url 'A_app' %}">Django App Home</a>
+    <a href="{% url 'tailwindSetup' %}"><br>Tailwind Setup Page</a>
+{% endblock %}

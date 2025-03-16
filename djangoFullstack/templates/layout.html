@@ -1,0 +1,29 @@
+{% load static %}
+{% load static tailwind_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+        default
+        {% endblock %}
+    </title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    {% tailwind_css %}
+    
+</head>
+<body>
+    <nav class="bg-orange-500">This is our Navigation Bar</nav>
+   {% block content %}
+    <h2>Insert Text in content Block. This is layout.html</h2>
+   {% endblock %}
+
+   {% block homelink %}
+   <br>
+   <a class="bg-fuchsia-600" href="{% url 'main' %}">Main Page</a>
+   {% endblock %}
+</body>
+</html>
